@@ -3,15 +3,16 @@ import AppLayout from '@/layouts/AppLayout'
 import AuthLayout from '@/layouts/AuthLayout'
 import ProfileLayout from '@/layouts/ProfileLayout'
 import { lazy, Suspense } from 'react'
+import DashboardView from '@/views/DashboardView'
+import LoginView from '@/views/auth/LoginView'
 
-const DashboardView = lazy(() => import('@/views/DashboardView'))
+
 const CreateProjectView = lazy(() => import('@/views/projects/CreateProjectView'))
 const ProjectDetailsView = lazy(() => import('@/views/projects/ProjectDetailsView'))
 const EditProjectView = lazy(() => import('@/views/projects/EditProjectView'))
 const ProjectTeamView = lazy(() => import('@/views/projects/ProjectTeamView'))
 const ProfileView = lazy(() => import('@/views/profile/ProfileView'))
 const ChangePasswordView = lazy(() => import('@/views/profile/ChangePasswordView'))
-const LoginView = lazy(() => import('@/views/auth/LoginView'))
 const RegisterView = lazy(() => import('@/views/auth/RegisterView'))
 const ConfirmAccountView = lazy(() => import('@/views/auth/ConfirmAccountView'))
 const RequestNewCodeView = lazy(() => import('@/views/auth/RequestNewCodeView'))
