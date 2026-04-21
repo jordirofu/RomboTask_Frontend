@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query"
 import { Link, Navigate, useNavigate, useParams } from "react-router-dom"
 import { isManager } from "@/utils/policies"
 import { useMemo } from "react"
+import Loading from "@/components/Loading"
 
 
 export default function ProjectDetailsView() {
@@ -28,7 +29,7 @@ export default function ProjectDetailsView() {
 
     const isCollaborator = useMemo(()=> data?.manager.toString() !== userData?._id.toString(), [data, userData])
 
-    if (isLoading || isUserDataLoading) return "Cargando"
+    if (isLoading || isUserDataLoading) return (<Loading />)
     if (isError) return <Navigate to='/404' />
     if (data && userData) return (
         <>

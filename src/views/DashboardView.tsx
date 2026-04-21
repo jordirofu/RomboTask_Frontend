@@ -7,6 +7,7 @@ import { getProjects } from "@/api/ProjectApi"
 import { useAuth } from '@/hooks/useAuth'
 import { isManager } from '@/utils/policies'
 import DeleteProjectModal from '@/components/projects/DeleteProjetcModal'
+import Loading from '@/components/Loading'
 
 export default function DashboardView() {
 
@@ -19,7 +20,7 @@ export default function DashboardView() {
         queryFn: getProjects
     })
 
-    if (isLoading || isUserDataLoading) return 'Cargando...'
+    if (isLoading || isUserDataLoading) return (< Loading/>)
 
     if (data && userData) return (    
 

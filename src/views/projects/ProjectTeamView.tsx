@@ -7,6 +7,7 @@ import { Menu, MenuButton, MenuItem, MenuItems, Transition } from '@headlessui/r
 import { EllipsisVerticalIcon  } from '@heroicons/react/20/solid'
 import { toast } from "react-toastify"
 import type { TeamMember } from "@/types/index"
+import Loading from "@/components/Loading"
 
 
 
@@ -39,7 +40,7 @@ export default function ProjectTeamView() {
     }  
 
 
-    if (isLoading) return 'Cargando...'
+    if (isLoading) return (<Loading />)
     if (isError) return <Navigate to={'/404'} />
     if (data) return (
         <>

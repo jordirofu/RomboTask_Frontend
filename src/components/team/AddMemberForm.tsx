@@ -5,6 +5,7 @@ import ErrorMessage from "@/components/ErrorMessage"
 import type { TeamMemberForm } from "@/types/index"
 import { findUserByEmail } from "@/api/TeamApi"
 import SearchResult from "./SearchResult"
+import Loading from "@/components/Loading"
 
 
 export default function AddMemberForm() {
@@ -66,7 +67,7 @@ export default function AddMemberForm() {
                 />
             </form>
             <div className="mt-10">
-                {mutation.isPending && <p className="text-center">Cargando...</p>}
+                {mutation.isPending && (<Loading />)}
                 {mutation.error && <p className="text-center">{mutation.error.message}</p> }
                 {mutation.data && <SearchResult user={mutation.data} resetData={resetData} />}
             </div>

@@ -6,6 +6,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { deleteNote } from "@/api/NoteApi"
 import { toast } from "react-toastify"
 import { useParams, useSearchParams } from "react-router-dom"
+import Loading from "@/components/Loading"
 
 type NoteDetailProps = {
     note: Note
@@ -38,7 +39,7 @@ export default function NoteDetail({ note }: NoteDetailProps) {
     }
 
 
-    if (isLoading) return 'Cargando...'
+    if (isLoading) return (<Loading />)
 
     return (
         <div className="pl-5 pb-2 flex justify-between items-center ">
