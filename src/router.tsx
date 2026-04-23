@@ -5,6 +5,7 @@ import ProfileLayout from '@/layouts/ProfileLayout'
 import { lazy, Suspense } from 'react'
 import DashboardView from '@/views/DashboardView'
 import LoginView from '@/views/auth/LoginView'
+import Loading from '@/components/Loading'
 
 
 const CreateProjectView = lazy(() => import('@/views/projects/CreateProjectView'))
@@ -24,7 +25,7 @@ const NotFound = lazy(() => import('@/views/404/NotFound'))
 export default function Router() {
     return (
         <BrowserRouter>
-        <Suspense fallback={<div className="text-center py-10">Cargando...</div>}>
+        <Suspense fallback={<Loading/>}>
             <Routes>
                 <Route element={<AppLayout />}>
                     <Route path='/' element={<DashboardView />} index />

@@ -80,7 +80,6 @@ export default function TaskCard({ task, isCollaborator }: TaskCardProps) {
                                             type="button"
                                             className="block px-3 py-1 text-sm leading-6 text-gray-900"
                                             onClick={() => navigate(location.pathname + `?editTaskId=${task._id}`)}
-                                        //en este caso se podría utilizar el "location" de "window." y funcionaría...para extaer info y tal.. mejor el de useLocation() 
                                         >
                                             Editar Tarea
                                         </button>

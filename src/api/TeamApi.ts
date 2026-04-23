@@ -4,7 +4,7 @@ import { teamMembersSchema, type Project, type TeamMember, type TeamMemberForm }
 
 export async function findUserByEmail({ projectId, formData }: { projectId: Project['_id'], formData: TeamMemberForm }) {
 
-    const { data } = await api.post(`/projects/${projectId}/team/find`, formData) //esto vale si la llamada es post
+    const { data } = await api.post(`/projects/${projectId}/team/find`, formData) 
     return data
 }
 

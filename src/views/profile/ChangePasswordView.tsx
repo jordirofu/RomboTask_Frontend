@@ -46,7 +46,7 @@ export default function ChangePasswordView() {
             <input
               id="current_password"
               type="password"
-              placeholder="Password Actual"
+              placeholder="Contraseña actual"
               className="w-full p-3  border border-gray-200"
               {...register("current_password", {
                 required: "La contraseña actual es obligatoria",

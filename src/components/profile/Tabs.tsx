@@ -43,7 +43,7 @@ export default function Tabs() {
                             <Link
                                 key={tab.name}
                                 to={tab.href}
-                                className={classNames(     //método al que le paso dos strings... y me los devuelve solo en uno
+                                className={classNames(    
                                     location.pathname === tab.href
                                         ? 'border-purple-800 text-purple-800'
                                         : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700',

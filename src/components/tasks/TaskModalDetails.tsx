@@ -29,31 +29,8 @@ export default function TaskModalDetails() {
         queryKey: ['viewTask', taskId],
         queryFn: () => getTaskById({ projectId, taskId }),
         enabled: !!taskId,
-        retry: false //si no, esta tarda mucho
+        retry: false 
     })
-
-    //LA FORMA COMENTADA, MAL... TRATAS DE HACER EL RENDER DE UN "SIDE EFFECT" EN EL CÓDIGO DEL RENDER...
-    //REACT SE LÍA
-
-    //si hemos metido un taskId inválido en url, p. ej.. no quiero ir a otra pantalla, simplemente
-    //que salga un toast, se quite el queryString y listos...
-    // if (isError) {
-    //     //en este caso, al quitar la queryString con navigate... en consola navegador aparecía este error:
-    //     //Cannot update a component (`Lt`) while rendering a different component (`TaskModalDetails`). To locate the bad setState() call inside `TaskModalDetails`
-    //     //navigate(location.pathname, {replace: true}) //el "navigate" es para eventos (onClick) y USEeFFECT
-    //     toast.error(error.message, {toastId: 'error'})
-    //     return <Navigate to={`/projects/${projectId}`} /> //esto es... volver a la página del proyecto, pero sin queryString, sin modal
-    // }
-
-    //Lo de arriba: es... si hay un error... return: renderizo el <Navigate> que de hecho es una acción y navego.
-    //si no hay error: siguiente return, el de abajo... pinto la modal.
-
-
-    //OJO, SI NO HUBIERA QUE PINTAR TOAST Y SOLO FUERA NAVEGACIÓN SÍ PODRÍAS HACER UN: (RENDERIZAS DIRECTAMENTE UNA NAVEGACIÓN)
-    // if (isError) {
-
-    //     return <Navigate to={`/projects/${projectId}`} /> //esto es... volver a la página del proyecto, pero sin queryString, sin modal
-    // }
 
     const { mutate } = useMutation({
         mutationFn: updateTaskStatus,
@@ -64,7 +41,6 @@ export default function TaskModalDetails() {
             toast.success(data)
             queryClient.invalidateQueries({ queryKey: ['viewTask', taskId] })
             queryClient.invalidateQueries({ queryKey: ['projectDetails', projectId] })
-            //navigate(location.pathname, {replace: true})
         }
     })
 
@@ -76,14 +52,12 @@ export default function TaskModalDetails() {
 
     useEffect(() => {
         if (isError) {
-            // console.log('entró en isError');
-            //const errorMessage = (error as any).message //si no... para TS siempre es never
-            toast.error(error.message, { toastId: 'error' }) //el segundo parámetro es una forma de hacer que la toast no aparezca
-            navigate(location.pathname, { replace: true })//dos veces debido al doble render de React
+            toast.error(error.message, { toastId: 'error' })
+            navigate(location.pathname, { replace: true })
         }
     }, [isError, error])
 
-    if (data) return (    //si hay datos, pintas, si no, no... (igualmente, no pintará cuando show sea false)
+    if (data) return (   
         <>
             <Transition appear show={show} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>

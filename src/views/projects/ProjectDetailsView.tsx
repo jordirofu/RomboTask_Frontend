@@ -18,8 +18,7 @@ export default function ProjectDetailsView() {
     const params = useParams()
     const projectId = params.projectId!
 
-    const { data: userData, isLoading: isUserDataLoading } = useAuth() //añadimos esto para gestionar lo que no ve el colaborador
-
+    const { data: userData, isLoading: isUserDataLoading } = useAuth() 
     const { data, isLoading, isError } = useQuery(
         {
             queryFn: () => getProjectbyId(projectId),

@@ -38,7 +38,7 @@ const {mutate} = useMutation({
     }) 
 
 const handleEditTask = (formData: TaskFormData) => {
-    mutate({formData, projectId, taskId }) //o creas un objeto data = {} con todas las props, y le pasas "data" a mutate.
+    mutate({formData, projectId, taskId }) 
    
 }
 

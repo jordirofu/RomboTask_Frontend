@@ -12,7 +12,7 @@ export default function ConfirmAccountView() {
 
     const [token, setToken] = useState<ConfirmToken['token']>('')
 
-    const handlePinInputChange = (token: ConfirmToken['token']) => { //el componente PinInput no envía "e" envía directamente como parámetro el valor introducido
+    const handlePinInputChange = (token: ConfirmToken['token']) => { 
         setToken(token)
     }
 

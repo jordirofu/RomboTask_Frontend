@@ -45,13 +45,8 @@ export default function DeleteProjectModal() {
 
 
     const handleForm = async (formData: DeleteCheckPasswordForm) => {
-        try {
-            await checkUserPasswordMutation.mutateAsync(formData) //se usa el await ...mutateAsync... para que no se hagan los dos métodos cada uno por su lado... si falla el primero error y el segundo no se ejecuta
-            deleteProjectMutation.mutateAsync(deleteProjectId)
-            
-        } catch (error) { //este catch vacío es para que el error no se propage y vaya a consola navegador... el toast igualmente saldrá.
-            
-        }
+            await checkUserPasswordMutation.mutateAsync(formData) 
+            await deleteProjectMutation.mutateAsync(deleteProjectId)
     }
 
 

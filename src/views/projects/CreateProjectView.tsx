@@ -43,7 +43,7 @@ export default function CreateProjectView() {
                 </nav>
 
                 <form
-                    noValidate //para que deshabilite validación de html5
+                    noValidate 
                     className="mt-10 bg-white shadow-lg p-10 rounded-lg"
                     onSubmit={handleSubmit(handleForm)}
                 >

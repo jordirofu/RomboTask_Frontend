@@ -1,8 +1,5 @@
 import axios, { isAxiosError } from "axios"
 
-//esta clase será un wrapper de axios. Pondremos aquí ciertas "configuraciones" para ahorrar código común
-//y para facilitar la modificación si cambia algo en serbidos
-
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL
 })

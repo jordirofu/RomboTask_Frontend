@@ -21,10 +21,10 @@ export default function EditProjectForm({ data }: EditProjectProps) {
 
     const { mutate } = useMutation({
         mutationFn: updateProject,
-        onError: (error) => { //lo que devuelve la función si hay error
+        onError: (error) => { 
             toast.error(error.message)
         },
-        onSuccess: (data) => { //data es lo que devuelve la función si no hay error
+        onSuccess: (data) => { 
             queryClient.invalidateQueries({ queryKey: ['projects'] })
             queryClient.invalidateQueries({ queryKey: ['editProject', projectId] })
             toast.success(data)

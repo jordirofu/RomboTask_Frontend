@@ -8,9 +8,6 @@ import Router from './router'
 const queryClient = new QueryClient()
 
 createRoot(document.getElementById('root')!).render(
-  // <StrictMode>
-  //  <Router />
-  // </StrictMode>,
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <Router />

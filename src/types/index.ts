@@ -121,7 +121,7 @@ export const dashboardProjectSchema = z.array(
 
 )
 
-export type Project = z.infer<typeof projectSchema> //para cuando traigas datos de base datos
+export type Project = z.infer<typeof projectSchema> 
 
 export type ProjectFormData = Pick<Project, 'projectName' | 'clientName' | 'description'>
 

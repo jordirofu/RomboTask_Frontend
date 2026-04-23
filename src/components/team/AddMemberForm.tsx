@@ -26,8 +26,8 @@ export default function AddMemberForm() {
     }
 
     const resetData = () => {
-        reset(), //limpia el formulario
-        mutation.reset() //limpia el contenido que tiene mutation de la última mutation ejecutada
+        reset(),
+        mutation.reset() 
     }
 
     return (

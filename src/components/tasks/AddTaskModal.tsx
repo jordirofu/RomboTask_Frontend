@@ -16,11 +16,8 @@ import { toast } from "react-toastify"
 
 export default function AddTaskModal() {
 
-    //Determinar si modal ha de existir
 
-    const location = useLocation() //para extraer si hay ?newTask=true en la queryString de la ur
-    // const queryParams = new URLSearchParams(location.search) //location.search te trae desde el interrogantes hasta el final (de la url actual)
-    // const modalTask = queryParams.get('newTask')
+    const location = useLocation() 
     const [ searchParams] = useSearchParams()
     const modalTask = searchParams.get('newTask')
     const show = modalTask ? true : false
@@ -34,8 +31,6 @@ export default function AddTaskModal() {
     const { register, reset, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues });
 
     const closeModal = () => {navigate (location.pathname, { replace: true })} 
-                        {/* location.pathname es url actual... el replace a true es... borrar toda la parte de queryString
-            Con esto show vuelve a ser false y se cierra modal */}
 
     const queryClient = useQueryClient()
     
@@ -51,7 +46,6 @@ export default function AddTaskModal() {
            }
     })
     
-    //Obtener projectId
     const params = useParams()
     const projectId = params.projectId!
 
@@ -67,7 +61,7 @@ export default function AddTaskModal() {
     return (
         <>
             <Transition appear show={show} as={Fragment}>
-                <Dialog as="div" className="relative z-10" onClose={closeModal/*() => { navigate(location.pathname, { replace: true }) }*/}>
+                <Dialog as="div" className="relative z-10" onClose={closeModal}>
 
                     <TransitionChild
                         as={Fragment}
