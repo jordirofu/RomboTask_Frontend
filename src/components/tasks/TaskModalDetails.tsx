@@ -8,6 +8,7 @@ import { formatDate } from '@/utils/utils'
 import { statusTranslations } from '@/locales/es'
 import type { TaskStatus } from '@/types/index'
 import NotesPanel from '../notes/NotesPanel'
+import { XMarkIcon } from '@heroicons/react/24/outline'
 
 
 
@@ -29,7 +30,7 @@ export default function TaskModalDetails() {
         queryKey: ['viewTask', taskId],
         queryFn: () => getTaskById({ projectId, taskId }),
         enabled: !!taskId,
-        retry: false 
+        retry: false
     })
 
     const { mutate } = useMutation({
@@ -57,7 +58,7 @@ export default function TaskModalDetails() {
         }
     }, [isError, error])
 
-    if (data) return (   
+    if (data) return (
         <>
             <Transition appear show={show} as={Fragment}>
                 <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -84,7 +85,14 @@ export default function TaskModalDetails() {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <DialogPanel className="w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
+                                <DialogPanel className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all p-16">
+                                    <button
+                                        type="button"
+                                        onClick={closeModal}
+                                        className="absolute top-4 right-4 rounded-full p-2 hover:bg-gray-100 transition"
+                                    >
+                                        <XMarkIcon className="w-6 h-6 text-gray-600" />
+                                    </button>
                                     <p className='text-sm text-slate-400'>Agregada el:{' '}{formatDate(data.createdAt)}</p>
                                     <p className='text-sm text-slate-400'>Última actualización:{' '}{formatDate(data.updatedAt)}</p>
                                     <DialogTitle
