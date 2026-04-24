@@ -54,6 +54,7 @@ https://rombo-task-frontend.vercel.app/
 - JWT-based authentication for secured endpoints
 
 ## Project Structure
+```text
 src
 ├── api              # API service layers (Auth, Project, Task, Team, etc.)
 ├── components       # Reusable UI components
@@ -77,6 +78,7 @@ src
 ├── index.css        # Global styles (Tailwind CSS)
 ├── router.tsx       # Routing logic
 └── main.tsx         # Entry point
+```
 
 ## Installation
 
