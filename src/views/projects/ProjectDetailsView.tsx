@@ -38,12 +38,12 @@ export default function ProjectDetailsView() {
                 <nav className="my-5 flex gap-3">
                     <button
                         type="button"
-                        className="bg-purple-400 hover:bg-purple-500 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
+                        className="bg-purple-400 hover:bg-purple-500 px-3 lg:px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
                         onClick={() => navigate('?newTask=true')}
                     >Añadir tarea
                     </button>
                     <Link
-                        className="bg-fuchsia-600 hover:bg-purple-700 px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
+                        className="bg-fuchsia-600 hover:bg-purple-700 px-3 lg:px-10 py-3 text-white text-xl font-bold cursor-pointer transition-colors"
                         to={'team'} 
                     >Colaboradores</Link>
 
