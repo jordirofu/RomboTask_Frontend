@@ -44,9 +44,9 @@ export default function TaskList({ tasks, isCollaborator }: TaskListProps) {
         <>
             <h2 className="text-5xl font-black my-10">Tareas</h2>
 
-             <div className='flex gap-4 overflow-x-auto md:overflow-x-visible pb-32 w-full'>
+             <div className='flex gap-4 overflow-x-auto lg:overflow-x-visible pb-32 w-full'>
                 {Object.entries(groupedTasks).map(([status, tasks]) => (
-                    <div key={status} className='min-w-75 md:min-w-0 md:flex-1'>
+                    <div key={status} className='min-w-75 lg:min-w-0 lg:flex-1'>
                         <h3 className={`text-xl font-light border border-slate-300 bg-white p-3 border-t-8 ${statusColors[status as TaskStatus]}`}>{statusTranslations[status as TaskStatus]}</h3>
                         <ul className='mt-5 space-y-5'>
                             {tasks.length === 0 ? (
