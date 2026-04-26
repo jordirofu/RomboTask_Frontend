@@ -41,7 +41,7 @@ export default function NewPasswordToken( {token, setToken, setIsValidToken} : N
                 <label
                     className="font-normal text-2xl text-center block"
                 >Código de 6 dígitos</label>
-                <div className="flex justify-center gap-5">
+                <div className="flex justify-center gap-3 md:gap-5" >
                     <PinInput onChange={handleChange} onComplete={handleComplete} value={token}>
                         <PinInputField className="h-10 w-10 p-3 rounded-lg border-gray-300 border placeholder-white" />
                         <PinInputField className="h-10 w-10 p-3 rounded-lg border-gray-300 border placeholder-white" />

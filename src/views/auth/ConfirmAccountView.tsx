@@ -34,8 +34,8 @@ export default function ConfirmAccountView() {
 
     return (
         <>
-            <h1 className="text-5xl font-black text-white">Confirma tu Cuenta</h1>
-            <p className="text-2xl font-light text-white mt-5">
+            <h1 className="text-2xl md:text-5xl font-black text-white">Confirma tu cuenta</h1>
+            <p className="text-xl md:text-2xl font-light text-white mt-5">
                 Introduce el <span className=" text-fuchsia-500 font-bold">código</span> que has recibido {''}
                 por email
             </p>
@@ -45,7 +45,7 @@ export default function ConfirmAccountView() {
                 <label
                     className="font-normal text-2xl text-center block"
                 >Código de 6 dígitos</label>
-                <div className="flex justify-center gap-5">
+                <div className="flex justify-center gap-3 md:gap-5">
                     <PinInput value={token} onChange={handlePinInputChange} onComplete={handlePinInputComplete}>
                         <PinInputField className="w-10 h-10 p-3 rounded-lg border-gray-300 border placeholder-white" />
                         <PinInputField className="w-10 h-10 p-3 rounded-lg border-gray-300 border placeholder-white" />

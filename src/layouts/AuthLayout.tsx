@@ -7,7 +7,7 @@ export default function AuthLayout() {
     return (
         <>
             <div className="bg-gray-800 min-h-screen">
-                <div className="py-8 lg:py-15 mx-auto w-112.5">
+                    <div className="py-8 lg:py-15 mx-auto w-[90%] max-w-md">
                     <Logo />
                     <div className="mt-10">
                         <Outlet />

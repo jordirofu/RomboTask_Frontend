@@ -34,8 +34,8 @@ export default function ForgotPasswordView() {
 
     return (
         <>
-            <h1 className="text-5xl font-black text-white">Restablecer contraseña</h1>
-            <p className="text-2xl font-light text-white mt-5">
+            <h1 className="text-2xl md:text-5xl font-black text-white">Restablecer contraseña</h1>
+            <p className="text-xl md:text-2xl font-light text-white mt-5">
                 Introduce tu email para{' '}
                 <span className=" text-fuchsia-500 font-bold">restablecer contraseña</span>
             </p>
